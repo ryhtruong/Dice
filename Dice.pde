@@ -1,12 +1,4 @@
-Dice Dice1;
-Dice Dice2;
-Dice Dice3;
-Dice Dice4;
-Dice Dice5;
-Dice Dice6;
-Dice Dice7;
-Dice Dice8;
-Dice Dice9;
+Dice Dicey;
 
 void setup(){
 size(350,350);
@@ -15,45 +7,17 @@ noLoop();
 
 void draw(){
 background(255);
-  Dice1 = new Dice(50,70);
-  Dice1.randomize();
-  Dice1.show();
-  
-  Dice2 = new Dice(150,70);
-  Dice2.randomize();
-  Dice2.show();
-  
-  Dice3 = new Dice(250,70);
-  Dice3.randomize();
-  Dice3.show();
-  
-  Dice4 = new Dice(50,170);
-  Dice4.randomize();
-  Dice4.show();
-  
-  Dice5 = new Dice(150,170);
-  Dice5.randomize();
-  Dice5.show();
-  
-  Dice6 = new Dice(250,170);
-  Dice6.randomize();
-  Dice6.show();
-  
-  Dice7 = new Dice(50,270);
-  Dice7.randomize();
-  Dice7.show();
-  
-  Dice8 = new Dice(150,270);
-  Dice8.randomize();
-  Dice8.show();
-  
-  Dice9 = new Dice(250,270);
-  Dice9.randomize();
-  Dice9.show();
-  
-  int sum=0;
- sum = (Dice1.number)+(Dice2.number)+(Dice3.number)+(Dice4.number)+(Dice5.number)+(Dice6.number)+(Dice7.number)+(Dice8.number)+(Dice9.number);
-  text("Sum = " + sum, 150, 35);
+ int sum = 0;
+for(int i= 30; i<=270; i+=70){
+  for (int j=20; j<=270; j+=60){
+      Dice Dicey = new Dice(j,i);
+      Dicey.randomize();  
+      Dicey.show();
+      sum += Dicey.number;
+  }
+}
+
+  text("Sum = " + sum, 150, 335);
 }
 
 void mousePressed(){
